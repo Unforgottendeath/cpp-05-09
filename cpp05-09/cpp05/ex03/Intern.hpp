@@ -2,9 +2,10 @@
 
 #include <iostream>
 #include <string>
-#include "AForm.hpp"
 
-class Intern : public AForm
+class Form;
+
+class Intern
 {
     public:
         // Constructors
@@ -15,5 +16,8 @@ class Intern : public AForm
         ~Intern();
 
         // Member Functions
-        AForm* makeForm(std::string const & formName, std::string const & formTarget);
+        Form* makeForm(std::string const & formName, std::string const & formTarget);
+
+        // Operator overload
+        Intern & operator=(const Intern &src);
 };

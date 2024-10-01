@@ -18,13 +18,13 @@ Intern::Intern(const Intern &src)
 // Deconstructor
 Intern::~Intern()
 {
-	std::cout << "Intern Deconstructor called" << std::endl;
+	std::cout << ORANGE << "Intern Deconstructor called" << RESET << std::endl;
 }
 
 // Operator overload
 Intern &Intern::operator=(const Intern &src)
 {
-	std::cout << "Intern Assignation operator called" << std::endl;
+	std::cout << GREEN << "Intern Assignation operator called" << RESET << std::endl;
 	if (this == &src)
 		return *this;
 
@@ -32,25 +32,25 @@ Intern &Intern::operator=(const Intern &src)
 }
 
 // static functions for makeForm
-static AForm	*makePresident(const std::string target)
+static Form	*makePresident(const std::string target)
 {
 	return (new PresidentialPardonForm(target));
 }
 
-static AForm	*makeRobot(const std::string target)
+static Form	*makeRobot(const std::string target)
 {
 	return (new RobotomyRequestForm(target));
 }
 
-static AForm	*makeShrubbery(const std::string target)
+static Form	*makeShrubbery(const std::string target)
 {
 	return (new ShrubberyCreationForm(target));
 }
 
 // Public Methods
-AForm	*Intern::makeForm(const std::string& form_to_create, const std::string& target_for_form)
+Form	*Intern::makeForm(const std::string& form_to_create, const std::string& target_for_form)
 {
-	AForm *(*all_forms[])(const std::string target) = {&makePresident, &makeRobot, &makeShrubbery};
+	Form *(*all_forms[])(const std::string target) = {&makePresident, &makeRobot, &makeShrubbery};
 	std::string forms[] = {"PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};
 
 	for (int i = 0; i < 3; i++)
@@ -62,6 +62,6 @@ AForm	*Intern::makeForm(const std::string& form_to_create, const std::string& ta
 		}
 	}
 
-	std::cout << "\033[33mIntern can not create a form called " << form_to_create << "\033[0m" << std::endl;
+	std::cout << RED << "Intern can not create a form called " << form_to_create << RESET << std::endl;
 	return (NULL);
 }

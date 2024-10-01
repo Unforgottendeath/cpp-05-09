@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "Form.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -9,7 +9,8 @@ int main()
 {
     std::cout << YELLOW << "<------------------Testing AForm class:------------------>" << RESET << std::endl;
     Intern someRandomIntern;
-    AForm* rrf;
-    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    Form* rrf;
+    rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
+    delete rrf;
     return 0;
 }

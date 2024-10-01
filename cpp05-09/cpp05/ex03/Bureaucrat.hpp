@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-class AForm;
+class Form;
 
 class Bureaucrat
 {
