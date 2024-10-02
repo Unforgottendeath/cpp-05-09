@@ -1,4 +1,4 @@
-NAME		= ScalarConverter
+NAME		= Serializer
 	
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -6,11 +6,11 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= ScalarConverter main
+FILES		= Serializer main Data
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= ScalarConverter.hpp
+HEADER		= Serializer.hpp Data.hpp
 
 #Colors:
 GREEN		=	\e[92;5;118m

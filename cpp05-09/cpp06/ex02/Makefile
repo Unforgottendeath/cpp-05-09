@@ -1,4 +1,4 @@
-NAME		= ScalarConverter
+NAME		= Base
 	
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -6,11 +6,11 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= ScalarConverter main
+FILES		= Base main
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= ScalarConverter.hpp
+HEADER		= A.hpp Data.hpp B.hpp C.hpp
 
 #Colors:
 GREEN		=	\e[92;5;118m
