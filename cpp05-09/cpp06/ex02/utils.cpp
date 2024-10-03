@@ -1,18 +1,21 @@
-#include "Base.h"
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include "utils.hpp"
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
-Base* generate() {
-    srand(static_cast<unsigned int>(time(0))); // Seed random number generator
-    int random = rand() % 3; // Generate a random number between 0 and 2
+Base* generate()
+{
+    srand(static_cast<unsigned int>(time(0)));
+    int random = rand() % 3;
 
     if (random == 0) return new A();
     else if (random == 1) return new B();
     else return new C();
 }
 
-void identify(Base* p) {
+void identify(Base* p)
+{
     if (dynamic_cast<A*>(p)) {
         std::cout << "A" << std::endl;
     } else if (dynamic_cast<B*>(p)) {
@@ -24,7 +27,8 @@ void identify(Base* p) {
     }
 }
 
-void identify(Base& p) {
+void identify(Base& p)
+{
     try {
         (void)dynamic_cast<A&>(p);
         std::cout << "A" << std::endl;

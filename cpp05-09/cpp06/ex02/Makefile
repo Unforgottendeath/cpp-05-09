@@ -6,11 +6,11 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= Base main
+FILES		= Base main utils
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= A.hpp Data.hpp B.hpp C.hpp
+HEADER		= A.hpp Base.hpp B.hpp C.hpp utils.hpp
 
 #Colors:
 GREEN		=	\e[92;5;118m
