@@ -42,7 +42,7 @@ void ScalarConverter::handleDoubleSpecial(const std::string& literal)
 
 void ScalarConverter::handleFloat(const std::string& literal)
 {
-    std::string number = literal.substr(0, literal.length() - 1); // Remove the 'f'
+    std::string number = literal.substr(0, literal.length() - 1); 
     float value = std::stof(number);
     printFloat(value);
 }

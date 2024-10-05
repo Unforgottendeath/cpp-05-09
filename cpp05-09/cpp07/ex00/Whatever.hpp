@@ -11,6 +11,7 @@ const std::string RESET = "\033[0m";
 const std::string ORANGE = "\033[38;5;208m";
 
 template <typename T>
+
 void swap(T& a, T& b)
 {
     T c;
@@ -20,12 +21,16 @@ void swap(T& a, T& b)
     b = c;
 }
 
-T min(T& a, T& b)
+template<typename T>
+
+T Min(const T& a, const T& b)
 {
     return (b <= a ? b : a);
 }
 
-T max(T& a, T& b)
+template<typename T>
+
+T Max(const T& a,const T& b)
 {
     return (b >= a ? b : a);
 }
