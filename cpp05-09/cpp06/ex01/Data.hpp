@@ -18,6 +18,7 @@ public:
     // Constructors
     Data(int v, const std::string& n);
     Data(const Data& other);
+    Data();
 
     // Destructor
     ~Data();

@@ -72,5 +72,5 @@ void ScalarConverter::printDouble(double value)
 
 bool ScalarConverter::isPrintableChar(char c) 
 {
-    return c >= 32 && c <= 126; // Printable ASCII range
+    return c >= 32 && c <= 126;
 }

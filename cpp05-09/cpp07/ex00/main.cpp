@@ -10,11 +10,11 @@ int main() {
 
         // Test min function
         double a = 3.14, b = 2.71;
-        std::cout << YELLOW << "Min between " << a << " and " << b << " is: " << Min(a, b) << RESET << std::endl;
+        std::cout << YELLOW << "Min between " << a << " and " << b << " is: " << ::min(a, b) << RESET << std::endl;
 
         // Test max function
         std::string str1 = "apple", str2 = "banana";
-        std::cout << ORANGE << "Max between \"" << str1 << "\" and \"" << str2 << "\" is: \"" << Max(str1, str2) << "\"" << RESET << std::endl;
+        std::cout << ORANGE << "Max between \"" << str1 << "\" and \"" << str2 << "\" is: \"" << ::max(str1, str2) << "\"" << RESET << std::endl;
     }
     std::cout << YELLOW << "<---------------------------------------------------------------------------------------------------------------------------->" << RESET << std::endl;
     {
