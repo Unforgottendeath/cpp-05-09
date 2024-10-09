@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <string>
+#include <cstdlib>
 
 template <typename T>
 

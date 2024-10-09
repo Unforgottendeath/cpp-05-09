@@ -2,14 +2,14 @@
 
 // Constructors
 template <typename T>
-Array<T>::Array() : data(nullptr), size_(0) {}
+Array<T>::Array() : data(NULL), size_(0) {}
 
 template <typename T>
 Array<T>::Array(unsigned int n) : size_(n) {
     if (n > 0) {
         data = new T[n]();
     } else {
-        data = nullptr;
+        data = NULL;
     }
 }
 

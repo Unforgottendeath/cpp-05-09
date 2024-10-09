@@ -5,6 +5,7 @@
 #include <exception>
 #include <limits>
 #include <cmath>
+#include <sstream>
 
 class ScalarConverter
 {
@@ -19,6 +20,8 @@ class ScalarConverter
         static void printFloat(float value);
         static void printDouble(double value);
         static bool isPrintableChar(char c);
+        template<typename T>
+        static T stringToNumber(const std::string& str);
 
     public:
         static void convert(std::string const & literal);

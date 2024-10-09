@@ -1,7 +1,7 @@
 #pragma once
 
 #include <cstdint>
-#include "Data.hpp" // Make sure to include the Data class
+#include "Data.hpp"
 
 class Serializer
 {
