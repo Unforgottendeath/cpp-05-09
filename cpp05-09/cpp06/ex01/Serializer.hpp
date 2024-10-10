@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cstdint>
+typedef unsigned long uintptr_t;
 #include "Data.hpp"
 
 class Serializer
