@@ -6,7 +6,7 @@
 
 int main()
 {
-    std::srand(static_cast<unsigned>(std::time(nullptr)));
+    std::srand(static_cast<unsigned>(std::time(NULL)));
     std::cout << YELLOW << "<------------------Testing AForm class:------------------>" << RESET << std::endl;
     try {
         Bureaucrat bob("Bob", 50);

@@ -13,7 +13,7 @@ void ScalarConverter::convert(const std::string& literal)
             handleFloatSpecial(literal);
         } else if (literal == "-inf" || literal == "+inf" || literal == "nan") {
             handleDoubleSpecial(literal);
-        } else if (literal.back() == 'f') {
+        } else if (literal[literal.size() - 1] == 'f') {
             handleFloat(literal);
         } else {
             handleInteger(literal);
@@ -43,24 +43,24 @@ void ScalarConverter::handleDoubleSpecial(const std::string& literal)
 void ScalarConverter::handleFloat(const std::string& literal)
 {
     std::string number = literal.substr(0, literal.length() - 1); 
-    float value = std::stof(number);
+    float value = stringToNumber<float>(number);
     printFloat(value);
 }
 
 void ScalarConverter::handleInteger(const std::string& literal)
 {
-    int value = std::stoi(literal);
+    int value = stringToNumber<int>(literal);
     std::cout << "int: " << value << std::endl;
 }
 
 void ScalarConverter::handleDouble(const std::string& literal)
 {
-    double value = std::stod(literal);
+    double value = stringToNumber<double>(literal);
     printDouble(value);
 }
 
 void ScalarConverter::printFloat(float value)
-    {
+{
     std::cout << "float: " << value << "f" << std::endl;
     std::cout << "double: " << static_cast<double>(value) << std::endl;
 }
@@ -73,4 +73,13 @@ void ScalarConverter::printDouble(double value)
 bool ScalarConverter::isPrintableChar(char c) 
 {
     return c >= 32 && c <= 126;
+}
+
+template<typename T>
+T ScalarConverter::stringToNumber(const std::string& str)
+{
+    std::istringstream iss(str);
+    T result;
+    iss >> result;
+    return result;
 }
