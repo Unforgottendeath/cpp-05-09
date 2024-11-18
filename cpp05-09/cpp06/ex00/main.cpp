@@ -1,11 +1,12 @@
 #include "ScalarConverter.hpp"
 
-int main() {
-    ScalarConverter::convert("'a'");  
-    ScalarConverter::convert("42");     
-    ScalarConverter::convert("3.14f"); 
-    ScalarConverter::convert("-4.2");   
-    ScalarConverter::convert("nanf");    
-    ScalarConverter::convert("+inf");    
+int main(int ac, char **av) {
+    if (ac != 2) {
+        std::cerr << "Usage: " << av[0] << " <literal>" << std::endl;
+        return 1;
+    }
+    std::ostringstream oss;
+    oss << av[1];
+    ScalarConverter::convert(oss.str());
     return 0;
 }
