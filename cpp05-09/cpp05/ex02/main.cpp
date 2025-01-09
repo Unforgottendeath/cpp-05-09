@@ -9,20 +9,11 @@ int main()
     std::srand(static_cast<unsigned>(std::time(NULL)));
     std::cout << YELLOW << "<------------------Testing AForm class:------------------>" << RESET << std::endl;
     try {
-        Bureaucrat bob("Bob", 50);
-        ShrubberyCreationForm shrubbery("home");
-        RobotomyRequestForm robotomy("Alice");
-        PresidentialPardonForm pardon("Charlie");
-
-        bob.signForm(shrubbery);
-        bob.executeForm(shrubbery);
-
-        bob.signForm(robotomy);
-        bob.executeForm(robotomy);
-
-        bob.signForm(pardon);
-        bob.executeForm(pardon);
+        Bureaucrat bob("Bob", 150);
+        AForm *f = new RobotomyRequestForm();
+        f->execute(bob);
     } catch (const std::exception &e) {
+        delete f;
         std::cerr << RED << "Error: " << e.what() << RESET << "\n";
     }
 
